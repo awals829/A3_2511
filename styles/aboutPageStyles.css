@@ -1,0 +1,18 @@
+/* Minor Changes For About Page */
+.mainWrapper {
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.mainWrapper div {
+    margin-top: 50px;
+}
+
+#whoIAm a, #hobbies a, #interests a {
+    text-decoration: 1px underline;
+    font-style: italic;
+    color:var(--text-colour);
+}
+
+#whoIAm a:hover, #hobbies a:hover, #interests a:hover {
+    color:var(--link-hover-colour);
+    transition-duration: 0.5;
+}

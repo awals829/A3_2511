@@ -1,0 +1,311 @@
+:root {
+    --grid-rows: 1fr 8fr 1fr;
+    --grid-columns-big: 0.5fr 8fr 0.5fr;
+    --content-mobile-grid-rows: 1fr 1fr;
+
+    --content-light-background: rgba(211, 245, 247, 0.6);
+    --header-background-colour:rgba(210, 190, 233, 0.6);
+    --footer-background-colour:rgba(210, 190, 233, 0.6);
+    --body-background-colour:rgb(255, 251, 235);
+    --link-background-colour: rgba(199, 248, 250, 0.60);
+    --info-background-colour:rgba(210, 190, 233, 0.60);
+
+    --text-colour:rgb(65, 65, 65);
+
+    --info-border-colour:rgba(199, 248, 250, 0.60);
+    --link-border-colour:rgba(210, 190, 233, 0.60);
+    --link-hover-colour: rgb(201, 135, 207);
+    --separator-border-styling: 12px solid var(--body-background-colour);
+    --border-radius: 25px;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    background-color: var(--body-background-colour);
+    color:var(--text-colour);
+}
+
+.contentWrapper {
+    display: grid;
+    height: 100%;
+}
+.headerWrapper {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.mainWrapper {
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: var(--content-mobile-grid-rows);
+    background-color: var(--content-light-background);
+    border-radius: var(--border-radius);
+}
+.footerWrapper {
+    grid-row: 3;
+    grid-column: 2;
+    display: grid;
+}
+.textAlignCenter {
+    text-align: center;
+}
+.linkButton {
+    background-color: var(--link-background-colour);
+    border: 2px solid var(--link-border-colour);
+    border-radius: var(--border-radius);
+    padding-left: 10px;
+    padding-right: 10px;
+    width: fit-content;
+    margin: 4px;
+}
+.skipNav a {
+    position: absolute;
+    top:-100px;
+    width: fit-content;
+}
+.skipNav a:focus {
+    position: absolute;
+    top: 0px;
+}
+
+
+#topContent {
+    grid-row: 1;
+    grid-column: 1;
+}
+#bottomContent {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+
+
+a {
+    color: black;
+    text-decoration: none;
+    width: 125px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    font-size: 18px;
+}
+* {
+    margin: 5px;
+}
+span {
+    font-style:italic;
+    font-weight: bold;
+}
+p {
+    background-color: var(--info-background-colour);
+    border: 4px solid var(--info-border-colour);
+    border-radius: var(--border-radius);
+    height: fit-content;
+}
+header h1{
+    background-color: var(--header-background-colour);
+    border-radius: var(--border-radius);
+}
+footer span{
+    background-color: var(--footer-background-colour);
+    border-radius: var(--border-radius);
+}
+
+
+a:visited {
+    color: var(--text-colour);
+}
+a:hover, a:focus{
+    color:var(--link-hover-colour);
+    transition-duration: 0.5s;  
+}
+
+
+@media screen and (max-width:479px) {
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: var(--grid-rows);
+    }
+    .headerWrapper {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .mainWrapper {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .footerWrapper {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    .mobileContentGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 1fr;
+    }
+    .flexCenterContent {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 20px;
+    }
+
+}
+
+
+@media screen and (min-width:480px) and (max-width:1023px) {
+    .contentWrapper {
+        grid-template-columns: var(--grid-columns-big);
+        grid-template-rows: var(--grid-rows);
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .headerWrapper {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .mainWrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        grid-row: 2;
+        grid-column: 2;
+    }
+    .footerWrapper {
+        grid-row: 3;
+        grid-column: 2;
+    }
+    .largeContentGridRight {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .largeContentGridLeft {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .titleRight {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .titleLeft {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .flexCenterContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .borderBottomRight {
+        border-bottom: var(--separator-border-styling);
+        border-right: var(--separator-border-styling);
+    }
+    
+    .borderBottomLeft {
+        border-bottom: var(--separator-border-styling);
+        border-left: var(--separator-border-styling);
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 24px;
+    }
+
+}
+
+
+@media screen and (min-width:1024px) {
+    .contentWrapper {
+        grid-template-columns: var(--grid-columns-big);
+        grid-template-rows: var(--grid-rows);
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .headerWrapper {
+        grid-row: 1;
+        grid-column: 2;
+    }   
+    .mainWrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        grid-row: 2;
+        grid-column: 2;
+    }  
+    .footerWrapper {
+        grid-row: 3;
+        grid-column: 2;
+    }
+    .largeContentGridRight {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+    .largeContentGridLeft {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .titleRight {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .titleLeft {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .flexCenterContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    .borderBottomRight {
+        border-bottom: var(--separator-border-styling);
+        border-right: var(--separator-border-styling);
+    }
+    
+    .borderBottomLeft {
+        border-bottom: var(--separator-border-styling);
+        border-left: var(--separator-border-styling);
+    }
+
+
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 28px;
+    }
+
+}

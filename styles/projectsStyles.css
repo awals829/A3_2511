@@ -1,0 +1,30 @@
+:root {
+    --table-border-styling:8px solid rgba(211, 245, 247, 0.6);
+}
+.contentWrapper {
+    display: grid;
+    grid-template-rows: 0.5fr 8fr 0.5fr;
+}
+.mainWrapper{
+    grid-template-rows: 1fr;
+}
+table{
+    border-collapse: collapse;
+    padding: 50px;
+    font-size: 20px;
+}
+tr:nth-child(odd){
+    background-color: var(--info-background-colour);
+}
+tr:nth-child(even){
+    background-color: var(--link-background-colour);
+}
+tr {
+    border: var(--table-border-styling);
+}
+th {
+    border: var(--table-border-styling);
+}
+td {
+    border: var(--table-border-styling);
+}
